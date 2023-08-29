@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_5330038.Views.SurveyDetailsView"
+             Title="Nueva Encuesta"
+             xmlns:models ="clr-namespace:_5330038.Models"
+             x:DataType="models:Survey">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="StartAndExpand">
+            <Label Text="Name" TextColor="MediumPurple" FontAttributes="Bold" />
+            <Entry Text="{Binding Name}"/>
+            <Label Text="Fecha de nacimiento"/>
+            <DatePicker x:Name="BirthdatePicker"/>
+            <Label Text="Equipo Favorito"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="FavoriteTeamLabel"/>
+                <Button Grid.Column="1" Text="..." Clicked="FavoriteTeam_ClickedAsync"/>
+            </Grid>
+
+        <Button Text="Save" Clicked="Save_Clicked" TextColor="WhiteSmoke" FontAttributes="Bold" BackgroundColor="MediumOrchid" />
+        <Button Text="Delete" Clicked="Delete_Clicked" TextColor="WhiteSmoke" FontAttributes="Bold" BackgroundColor="MediumOrchid" />
+        <Button Text="Cancel" Clicked="Cancel_Clicked" TextColor="WhiteSmoke" FontAttributes="Bold" BackgroundColor="MediumOrchid" />
+
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
